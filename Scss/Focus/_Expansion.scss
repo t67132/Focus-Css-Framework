@@ -1,0 +1,81 @@
+//相簿
+.album{
+    background:rgba(0, 0, 0, 0.7);display:none;height:100%;left:0;position:fixed;top:0;width:100%;z-index:10;
+    &.active{display:block;}
+    .album-block{
+        background:#fff;border-radius:5px;height:90vh;left:5vw;position:relative;padding:3vw;right:5vw;top:5vh;width:90vw;
+        .album-close{
+            cursor:pointer;position:absolute;right:20px;
+            img{background:#ea0000;color:#fff;height:30px;padding:5px;width:30px;}
+        }
+        figure{
+            text-align:center;
+            img{max-width:100%;}
+            figcaption{border:#ddd solid 1px;color:#333;display:block;font-size:1.2rem;margin-top:10px;margin-bottom:10px;padding:10px;}
+        }
+        .album-btn{
+            left:0;position:absolute;top:45vh;width:100%;
+            span{
+                background:#666;border-radius:50px;cursor:pointer;display:inline-block;position:absolute;
+                img{height:50px;padding:10px;width:50px;}
+                &.left{left:10px;}
+                &.right{right:10px;}
+                &:hover{background:#333;}
+            }
+        }
+    }
+}
+
+//手風琴
+.accordion {
+    &.center{text-align:center;}
+    &.left{text-align:left;}
+    &.right{text-align:right;}
+    .accordion-block {
+        margin-bottom:10px;
+        .accordion-btn {background-color:#ddd;border-bottom:#b9b9b9 solid 3px;cursor:pointer;color:#333;display:block;font-size:1.3rem;padding:10px 20px;
+            &.active{border-bottom:#999 solid 3px;}
+        }
+        .accordion-content{
+            background:#efefef;display:none;font-size:1.2rem;padding:10px;letter-spacing:4px;line-height:1.6rem;
+            &.active{display:block;}
+        }
+    }
+}
+
+//日歷
+.calendar{
+    background:#fff;border:#ddd solid 1px;padding:10px;
+    .calendar-header{
+        background:#00ab9a;position:relative;text-align:center; box-shadow:0 2px 10px 0 #333;
+        .calendar-title{color:#fff;display:inline-block;font-size:1.4rem;font-weight:600;letter-spacing:2px;padding:10px;}
+        .calendar-btn{
+            background:#009485;cursor:pointer;position:absolute;padding:6px;top:13%;
+            &:hover{background:#00746a;box-shadow:0 0 5px 0 #333;}
+            &.prev{left:2%;}
+            &.next{right:2%;}
+            img{height:20px;vertical-align:middle;width:20px;}
+        }
+    }
+    .calendar-content{
+        .calendar-block{
+            font-size:0;text-align:center;
+            &.week{
+                color:#fff;
+                span{background:#00ab9a;}
+            }
+            &.day{
+                background:#ddd;
+                span{
+                    cursor:pointer;color:#333;
+                    &.have{
+                        &:hover{background:#00b6a1;}
+                    }
+                    &:hover, &.active{color:#fff;}
+                    &.active{background:#00a090;box-shadow:0 0 5px 0 #999;}
+                }
+            }
+            span{display:inline-block;font-size:1.2rem;font-weight:600;height:40px;line-height:2.6rem;vertical-align:middle;width:percentage(1 / 7);}
+        }
+    }
+}

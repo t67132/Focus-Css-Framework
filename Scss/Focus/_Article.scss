@@ -1,0 +1,43 @@
+hr{border:#ddd solid 2px;}
+br{display:block;margin-bottom:10px;}
+
+//訊息
+.msg{@include bg-gray();border-radius:5px;margin:5px auto;padding:10px;width:100%;}
+.msg-black{
+    background:$BlackL;
+}
+.msg-orange{
+    background:$OrangeL;
+}
+.msg-red{
+    background:$RedL;
+}
+.msg-green{
+    background:$GreenL;
+}
+.msg-lightblue{
+    background:$LightBlueL;
+}
+.msg-blue{
+    background:$BlueL;
+}
+
+//標題
+$TitleMargin:10px 0;
+h1{font-size:3rem;margin:$TitleMargin;}
+h2{font-size:2.6rem;margin:$TitleMargin;}
+h3{font-size:2.2rem;margin:$TitleMargin;}
+h4{font-size:1.8rem;margin:$TitleMargin;}
+h5{font-size:1.4rem;margin:$TitleMargin;}
+h6{font-size:1rem;margin:$TitleMargin;}
+
+//文章段落
+p{color:#333;letter-spacing:1px;word-break:break-all;}
+b{font-weight:600;}
+i{font-style:italic;}
+em{font-weight:bold;font-style:italic;}
+strong{font-weight:bold;}
+small{font-size:0.8rem;}
+sup{vertical-align:super;}
+sub{vertical-align:sub;}
+abbr[title], abbr[data-original-title]{border-bottom:0;cursor:help;}

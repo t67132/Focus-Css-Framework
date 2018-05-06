@@ -1,0 +1,56 @@
+//滑動輪播
+.slides{
+    background:rgba(0,0,0,0);clear:both;height:100%;overflow:hidden;position:relative;width:100%;z-index:1;
+    .slides-main{
+        height:100%;position:absolute;width:100%;
+        .slides-block{
+            @include transition-duration(1s);@include transform(scale(1.5));height:100%;opacity:0;overflow:hidden;position:absolute;width:100%;z-index:0;
+            &.active{@include transition-duration(2s);@include transform(scale(1));opacity:1;z-index:1;}
+            img{height:100%;width:100%;}
+            .slides-header{
+                position:absolute;top:30%;text-align:center;width:100%;z-index:1;
+                &.left{left:20%;text-align:left;}
+                &.right{right:20%;text-align:right;}
+                .slides-title{color:#fff;display:block;font-size:1.6rem;margin-bottom:20px;}
+                .slides-des{color:#fff;font-size:1rem;}
+                .slides-link{
+                    @include boxshadow(0 0 0 1px #09f);border-radius:5px;color:#E0E0E0;display:inline-block;font-size:0.9rem;margin-top:20px;padding:10px 20px;text-align:center;
+                    &:hover{@include transition-duration(0.8s);@include boxshadow(none);background:$Blue;}
+                }
+            }
+            iframe{height:100%;width:100%;}
+        }
+    }
+    .slides-btn{
+        position:relative;top:45%;z-index:2;
+        .slides-aside{
+            @include boxshadow(0 0 0 1px #09f);border-radius:50px;cursor:pointer;padding:10px 12px;position:relative;text-align:center;
+            img{display:block;height:30px;width:30px;}
+            &:hover{background:rgba(0, 153, 255, 0.5);}
+            &.disabled{display:none;}
+            &.prev{float:left;left:2%;}
+            &.next{float:right;right:2%;}
+        }
+    }
+    .slides-dot{
+        bottom:20px;margin:0 auto;position:absolute;text-align:center;width:100%;z-index:2;
+        .dot{
+            background:transparent;border-radius:5px;@include boxshadow(0 0 0 1px #09f);cursor:pointer;display:inline-block;height:8px;margin:0 2px;width:20px;
+            &:hover{@include transition-duration(0.8s);background:rgba(255,255,255,0.5);}
+            &.active{background:#fff;}
+        }
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .slides {
+        .slides-main {
+            .slides-block {
+                img {
+                    height: auto;
+                    width: auto;
+                }
+            }
+        }
+    }
+}

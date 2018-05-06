@@ -1,0 +1,210 @@
+﻿@charset "UTF-8";
+$Transparent:transparent;
+$White:#FFF !default;
+$Gray:#EDECEC;
+$GrayB:#E6E6E6;
+$GrayBI:#D4D4D4;
+$BlackL:#C7C7C7;
+$Black:#3F3F3F;
+$BlackB:#333;
+$BlackBI:#000;
+$OrangeL:#F7D5AB;
+$Orange:#EA8500;
+$OrangeB:#D97C00;
+$OrangeBI:#B46000;
+$RedL:#FFBFBF;
+$Red:#C50000;
+$RedB:#AC0000;
+$RedBI:#8A0000;
+$GreenL:#B6FFA6;
+$Green:#1B9700;
+$GreenB:#008E37;
+$GreenBI:#007C30;
+$LightBlueL:#A9F5FF;
+$LightBlue:#00B4D2;
+$LightBlueB:#0091B1;
+$LightBlueBI:#0087A1;
+$BlueL:#90CCFA;
+$Blue:#005CA3;
+$BlueB:#004F8D;
+$BlueBI:#004070;
+
+$MainColor: #449900 !default;
+$ChildColor: #f5911e !default;
+$SubColor: #bf272d !default;
+$CheckColor: #e30062 !default;
+$MainBtnColor:#0099d2 !default;
+$ChildBtnColor: #00ab9a !default;
+$MainThemeColor:#00c4e1 !default;
+
+$Unit:rem;
+$FontS:0.8+$Unit;
+$FontM:0.9+$Unit;
+$FontL:1+$Unit;
+$FontH:1.1+$Unit;
+
+$FontDefault:1+$Unit !default;
+
+$GridPadding:20px !default;
+
+$Columns:12 !default;
+
+@mixin Grid-Width($Size) {
+    -webkit-box-flex:0;
+        -ms-flex:0 0 percentage($Size / $Columns);
+            flex:0 0 percentage($Size / $Columns);
+    max-width:percentage($Size / $Columns);
+}
+
+@mixin Grid-Ready() {
+    position: relative;
+    padding: ($GridPadding / 2);
+    width: 100%;
+}
+
+@mixin SwitchStyle(){
+    box-shadow:0 2px 5px 0 #333;
+}
+
+@mixin InputPlaceholder($FontColor, $FontSize) {
+    &::-webkit-input-placeholder {
+        color: $FontColor;
+        font-size: $FontSize;
+    }
+
+    &::-moz-placeholder {
+        color: $FontColor;
+        font-size: $FontSize;
+    }
+
+    &:-ms-input-placeholder {
+        color: $FontColor;
+        font-size: $FontSize;
+    }
+
+    &:-moz-placeholder {
+        color: $FontColor;
+        font-size: $FontSize;
+    }
+}
+
+@mixin flex(){
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@mixin flex-wrap(){
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+
+@mixin flex-direction(){
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+}
+
+@mixin flex-justify(){
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+@mixin flex-align-content(){
+    -ms-flex-line-pack: center;
+        align-content: center;
+}
+
+@mixin flex-align-items(){
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+@mixin Grid-Flex() {
+    @include flex();
+    @include flex-wrap();
+    @include flex-direction();
+    @include flex-justify();
+}
+
+@mixin keyframes($AnimationName) {
+    @-webkit-keyframes #{$AnimationName} {
+        @content;
+    }
+    @keyframes #{$AnimationName} {
+        @content;
+    }
+}
+
+@mixin boxshadow($Val){
+    -webkit-box-shadow: $Val;
+            box-shadow: $Val;
+}
+
+@mixin transform($val) {
+    -webkit-transform: $val;
+            transform: $val;
+}
+
+@mixin transition-all($val) {
+    -webkit-transition: $val;
+            transition: $val;
+}
+
+@mixin transition-duration($val){
+    -webkit-transition-duration: $val;
+            transition-duration: $val;
+}
+
+@mixin animation($val) {
+    -webkit-animation: $val;
+            animation: $val;
+}
+
+@mixin box-sizing($val){
+    -webkit-box-sizing: $val;
+            box-sizing: $val;
+}
+
+@mixin appearance($val){
+    -webkit-appearance: $val;
+    -moz-appearance: $val;
+}
+
+@mixin bg-gray(){
+    background:$Gray;
+    color:$BlackB;
+}
+
+@mixin bg-black(){
+    background:$Black;
+    color:$White;
+}
+
+@mixin bg-orange(){
+    background:$Orange;
+    color:$White;
+}
+
+@mixin bg-red(){
+    background:$Red;
+    color:$White;
+}
+
+@mixin bg-green(){
+    background:$Green;
+    color:$White;
+}
+
+@mixin bg-lightblue(){
+    background:$LightBlue;
+    color:$White;
+}
+
+@mixin bg-blue(){
+    background:$Blue;
+    color:$White;
+}

@@ -1,0 +1,11 @@
+//IE 11 and IE 10
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    input{
+        &[type="checkbox"], &[type="radio"], &[type="color"]{padding:0;}
+    }
+}
+
+//IE 9
+input{
+    &[type="checkbox"], &[type="radio"], &[type="color"]{padding:0 \9;}
+}

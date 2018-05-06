@@ -1,0 +1,39 @@
+// 格線佈局
+// huge 巨大 21吋螢幕以上
+// Large 大 21吋螢幕以下
+// Medium 中
+// Small 小
+
+.grid {
+    @include Grid-Flex();
+    &.align-content{@include flex-align-content();}
+    &.align-items{@include flex-align-items();}
+}
+
+[class*="grid-"]{
+    @include Grid-Ready();
+}
+
+@for $i from 1 through $Columns {
+    .grid-h-#{$i}{@include Grid-Width($i)}
+}
+
+@media only screen and (max-width:1440px){
+    @for $i from 1 through $Columns {
+        .grid-l-#{$i}{@include Grid-Width($i)}
+    }
+}
+
+@media only screen and (max-width:966px){
+    @for $i from 1 through $Columns {
+        .grid-m-#{$i}{@include Grid-Width($i);}
+    }
+}
+
+@media only screen and (max-width:480px){
+    [class*="grid-"]{padding:0;}
+    @for $i from 1 through $Columns {
+        .grid-s-#{$i}{@include Grid-Width($i)}
+    }
+}
+  

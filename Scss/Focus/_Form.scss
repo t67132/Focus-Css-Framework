@@ -1,0 +1,110 @@
+//表單元件
+input, textarea{@include appearance(none);}
+input, textarea, select, label, button, a{vertical-align:middle;}
+
+//表單組合
+.form-block{@include Grid-Flex();@include flex-align-items();font-size:0;}
+
+.form-element{display:inline-block;font-size:0;text-align:center;}
+@for $i from 1 through $Columns {
+    .form-w-#{$i}{width: percentage($i / $Columns);}
+}
+
+//表單元件
+input, select, textarea, button{
+    border:#ddd solid 1px;color:#666;font-size:0.9rem;margin:5px auto;
+    &[readonly="readonly"]{background-color:#ededed;cursor:not-allowed;}
+}
+
+input{
+    @include InputPlaceholder(#999, 0.9rem);
+    &[type="checkbox"]{-webkit-appearance:checkbox;-moz-appearance:checkbox;}
+    &[type="radio"]{-webkit-appearance:radio;-moz-appearance:radio;}
+    &[type="range"]{height:37px;-webkit-appearance:range;}
+    &[type="file"]{background:#fff;padding:6px;}
+    &[type="date"]{padding:7.5px;}
+    &[type="checkbox"], &[type="radio"], &[type="color"]{height:22px;width:22px;}
+    &.input-m{height:27px;width:27px;}
+    &.input-l{height:32px;width:32px;}
+    &.input-h{height:37px;width:37px;}
+}
+.input-block{
+    padding:10px;width:100%;
+}
+
+select{
+    &.input-block{padding:9px;}
+}
+
+//檔案結果
+.file-result{
+    background-color:#b9b9b9;color:#fff;cursor:pointer;display:block;font-size:1.4rem;font-weight:bold;height:35px;margin:0 auto;text-align:center;width:35px;line-height:2.2rem;
+    &.success{background-color:$Green;}
+}
+
+//按鈕
+.form-btn{font-size:0;margin:10px auto;text-align:center;}
+.btn{
+    border-radius:5px;background-color:#ededed;cursor:pointer;display:inline-block;font-weight:400;font-size:$FontS;letter-spacing:1px;line-height:1rem;margin:0 5px;padding:4px 8px;text-decoration:none;text-align:center;
+    &.btn-fill{width:100%;}
+    &.btn-m{font-size:$FontM;padding:6px 12px;}
+    &.btn-l{font-size:$FontL;padding:8px 16px;}
+    &.btn-h{font-size:$FontH;padding:10px 20px;}
+}
+.btn-gray{
+    @include bg-gray();
+    &:hover{background:$GrayB;}
+}
+.btn-black{
+    @include bg-black();
+    &:hover{background:$BlackB;}
+}
+.btn-orange{
+    @include bg-orange();
+    &:hover{background:$OrangeB;}
+}
+.btn-red{
+    @include bg-red();
+    &:hover{background:$RedB;}
+}
+.btn-green{
+    @include bg-green();
+    &:hover{background:$GreenB;}
+}
+.btn-lightblue{
+    @include bg-lightblue();
+    &:hover{background:$LightBlueB;}
+}
+.btn-blue{
+    @include bg-blue();
+    &:hover{background:$BlueB;}
+}
+
+//標籤
+label{
+    display:inline-block;font-size:$FontS;padding:5px 10px;
+    &.label-m{font-size:$FontM;}
+    &.label-l{font-size:$FontL;}
+    &.label-h{font-size:$FontH;}
+    &.label-gray{
+        @include bg-gray();
+    }
+    &.label-black{
+        @include bg-black();
+    }
+    &.label-orange{
+        @include bg-orange();
+    }
+    &.label-red{
+        @include bg-red();
+    }
+    &.label-green{
+        @include bg-green();
+    }
+    &.label-lightblue{
+        @include bg-lightblue();
+    }
+    &.label-blue{
+        @include bg-blue();
+    }
+}

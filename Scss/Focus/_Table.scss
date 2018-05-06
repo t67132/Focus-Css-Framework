@@ -1,0 +1,92 @@
+//表格
+table{
+    margin-top:10px;margin-bottom:10px;text-align:center;width:100%;
+    th, td{font-size:0.9rem;padding:10px;vertical-align:middle;}
+    thead{
+        tr{
+            th{color:#000;font-weight:600;}
+        }
+    }
+    tbody{
+        tr{
+            &:hover{background-color:#f7f5f5;}
+            td{
+                color:#333;
+                img{height:40px;max-width:80px;padding:3px;border:#cacaca solid 1px;margin:3px auto;}
+            }
+        }
+    }
+    tfoot{
+        tr{
+            td{background-color:#ddd;color:#666;}
+        }
+    }
+    //默認
+    &.table{
+        background-color:#fff;
+        th, td{
+            border-left:#ddd solid 1px;
+            &:nth-child(1){border-left:none;}
+        }
+        thead{
+            tr{
+                background-color:#F0F0F0;border-bottom:#ddd solid 1px;border-top:#ddd solid 1px;
+                th{
+                    &:nth-child(n){border-top:none;}
+                }
+            }
+        }
+    }
+    //黑色
+    &.table-black{
+        background-color:#3F3F3F;
+        th, td{
+            border-left:rgba(255,255,255,0.3) solid 1px;color:#FFF;
+            &:nth-child(1){border-left:none;}
+        }
+        thead{
+            tr{
+                border-bottom:rgba(255,255,255,0.3) solid 1px;border-top:rgba(255,255,255,0.3) solid 1px;
+                th{
+                    &:nth-child(n){border-top:none;}
+                }
+            }
+        }
+        tbody{
+            tr{
+                background:#494949;
+                &:hover{background:#333;}
+            }
+        }
+    }
+}
+
+//分頁
+.paging {
+    font-size:0;margin:10px auto;text-align:center;background:#fff;padding:10px 0;
+    span{
+        border:#ddd solid 1px;border-radius:5px;cursor:pointer;color:#666;display:inline-block;font-size:1rem;height:30px;line-height:1.8rem;margin:0 5px;padding:0 5px;text-align:center;width:30px;
+        &:hover{border-color:$Blue;}
+        &.active{background:$Blue;color:#fff;}
+        &.paging-jump{
+            background:#ddd;vertical-align:bottom;
+            &:hover{background:$Blue;}
+            img{width:30px;height:30px;}
+        }
+    }
+}
+
+@media only screen and (max-width:966px){
+    .paging{
+        span{
+            height:30px;line-height:initial;width:30px; 
+            &.paging-jump{
+                img{height:20px;width:20px;}
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:480px){
+
+}
